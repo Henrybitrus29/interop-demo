@@ -1,0 +1,12 @@
+MSH|^~\&|LABSYS|CENTRAL_LAB|EHR|GENERAL_HOSP|20260314083512||ORU^R01^ORU_R01|MSG-BAD-0003|T|2.5.1
+PID|1||MRN100234^^^GENERAL_HOSP^MR~ALT-9981^^^LEGACY^PI||TESTPATIENT^ALEX^Q^^^^L||19800214|M|||12 Example St^^Springfield^IL^62701^USA^H||(555)555-0100^PRN^PH~^NET^Internet^alex@example.test
+ORC|RE|PLC-77001|LAB-55012||||||20260314080000
+OBR|1|PLC-77001|LAB-55012|51990-0^Basic metabolic panel^LN|||20260314075500|||||||||||||||20260314083000|||F
+OBX|1|NM|2951-2^Sodium^LN||138|mmol/L^mmol/L^UCUM|136-145|N|||F|||20260314075500
+OBX|2|NM|2823-3^Potassium^LN||5.9|mmol/L^mmol/L^UCUM|3.5-5.1|H|||F|||20260314075500
+NTE|1||Specimen slightly hemolyzed; repeat suggested.
+OBX|3|NM|2075-0^Chloride^LN||101|mmol/L^mmol/L^UCUM|98-107|N|||F|||
+OBX|4|NM|2028-9^Carbon dioxide^LN||22|mmol/L^mmol/L^UCUM|22-29|N|||F|||
+OBX|5|NM|3094-0^Urea nitrogen^LN||19|mg/dL^mg/dL^UCUM|6-20|N|||F|||
+OBX|6|NM|2160-0^Creatinine^LN||1.40|mg/dL^mg/dL^UCUM|0.70-1.30|H|||F|||
+OBX|7|NM|2345-7^Glucose^LN||92|mg/dL|70-99|N|||F|||

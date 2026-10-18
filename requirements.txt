@@ -1,0 +1,4 @@
+starlette>=0.40,<2
+uvicorn>=0.30
+fhir.resources>=8,<9
+saxonche>=12,<14

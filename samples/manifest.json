@@ -1,0 +1,42 @@
+{
+  "hl7": [
+    {"file": "oru_bmp.hl7", "label": "Basic metabolic panel", "expect": "accepted",
+     "note": "A routine blood chemistry panel. Potassium is flagged high, and the creatinine value 1.40 keeps its trailing zero."},
+    {"file": "oru_cbc_corrected.hl7", "label": "Blood count, corrected result", "expect": "accepted",
+     "note": "A corrected report. Its result ids are stable, so re-sending it updates the earlier resources instead of duplicating them."},
+    {"file": "oru_culture_preliminary.hl7", "label": "Blood culture, preliminary", "expect": "accepted",
+     "note": "Mixes value types: a SNOMED-coded organism, a structured colony count and free text."},
+    {"file": "bad_no_patient_id.hl7", "label": "Missing patient identifier", "expect": "rejected",
+     "note": "A result nobody can attach to a patient. The bridge refuses it instead of guessing."},
+    {"file": "bad_wrong_message_type.hl7", "label": "Wrong message type (admission)", "expect": "rejected",
+     "note": "An ADT admission message. This bridge only handles lab results, so it says so."},
+    {"file": "bad_test_traffic.hl7", "label": "Test traffic sent to production", "expect": "rejected",
+     "note": "The processing id says T for test. Test messages must never reach a production record."},
+    {"file": "bad_embedded_document.hl7", "label": "Embedded document it can't map", "expect": "rejected",
+     "note": "A result that carries an embedded PDF. Dropping it silently would lose data, so the message is rejected."},
+    {"file": "bad_future_result.hl7", "label": "Result dated in the year 2099", "expect": "rejected",
+     "note": "Well-formed HL7 that maps cleanly, then fails the validation rules because the result time is in the future."},
+    {"file": "bad_not_hl7.txt", "label": "Not HL7 at all", "expect": "rejected",
+     "note": "Plain text. It stops at the first stage."}
+  ],
+  "invoice": [
+    {"file": "simple_invoice.json", "label": "Standard invoice, 21% VAT", "expect": "accepted",
+     "note": "One line, 21% VAT, payable 121.00."},
+    {"file": "electricity_metered.json", "label": "Metered electricity, sub-cent price", "expect": "accepted",
+     "note": "1,000 kWh at 0.0125 EUR. The price keeps its four decimals, so the line is 12.50 and not 10.00."},
+    {"file": "mixed_vat_categories.json", "label": "Two VAT categories", "expect": "accepted",
+     "note": "A standard-rate line and a zero-rate line, each with its own VAT breakdown."},
+    {"file": "reverse_charge.json", "label": "Reverse charge", "expect": "accepted",
+     "note": "Reverse-charge VAT: taxed at 0% and carrying an exemption reason."},
+    {"file": "with_charge_and_allowance.json", "label": "Shipping charge and discount", "expect": "accepted",
+     "note": "Document-level charge and allowance, folded into the right VAT category's taxable amount."},
+    {"file": "credit_note.json", "label": "Credit note", "expect": "accepted",
+     "note": "Same data as an invoice, issued as a credit note (type 381)."},
+    {"file": "bad_missing_seller.json", "label": "Missing seller", "expect": "rejected",
+     "note": "No seller party. Rejected before any XML is produced."},
+    {"file": "bad_vat_category.json", "label": "Invalid VAT category", "expect": "rejected",
+     "note": "A VAT category code that doesn't exist."},
+    {"file": "bad_too_many_decimals.json", "label": "Price with too many decimals", "expect": "rejected",
+     "note": "A unit price of 0.00001 has more decimals than the format allows. It is rejected, not silently rounded."}
+  ]
+}

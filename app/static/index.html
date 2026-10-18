@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <title>Interoperability demos</title>
+  <meta name="description" content="Run an HL7 lab message or an ERP invoice through two working converters and see every stage, including where it stopped and why.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=Public+Sans:wght@400;600;700&display=swap">
+  <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+  <header class="masthead">
+    <div class="wrap">
+      <h1>Two converters you can run</h1>
+      <p class="lede">Paste a hospital lab message or an ERP invoice. The same code that's on GitHub converts it, checks it against the standard, and shows you each stage, including where it stopped and why.</p>
+      <div class="tabs" role="tablist" aria-label="Choose a demo">
+        <button type="button" role="tab" id="tab-hl7" aria-controls="panel-hl7" aria-selected="true">Lab results to FHIR</button>
+        <button type="button" role="tab" id="tab-invoice" aria-controls="panel-invoice" aria-selected="false" tabindex="-1">Invoices to Peppol UBL</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="wrap">
+    <div id="wake" class="notice" role="status" hidden>Waking the server. Free hosting sleeps when idle, so the first request can take up to a minute.</div>
+    <section id="panel-hl7" role="tabpanel" aria-labelledby="tab-hl7"></section>
+    <section id="panel-invoice" role="tabpanel" aria-labelledby="tab-invoice" hidden></section>
+  </main>
+
+  <footer class="wrap site-footer">
+    <p>All samples are synthetic. Nothing you paste is stored or logged, but please don't paste real patient or invoice data.</p>
+    <p>Built against synthetic data only. It has not been tested against a real hospital system or the live Peppol network.</p>
+    <p id="links" class="links" hidden></p>
+  </footer>
+
+  <script src="/static/app.js" defer></script>
+</body>
+</html>

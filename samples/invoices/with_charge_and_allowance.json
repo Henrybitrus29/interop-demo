@@ -1,0 +1,51 @@
+{
+  "invoice_number": "INV-0001",
+  "issue_date": "2026-03-14",
+  "currency": "EUR",
+  "order_reference": "PO-100",
+  "seller": {
+    "name": "Seller Co",
+    "vat_id": "BE038727515",
+    "address": {
+      "line1": "1 Example St",
+      "city": "City",
+      "postal_code": "1000",
+      "country": "BE"
+    }
+  },
+  "buyer": {
+    "name": "Buyer Co",
+    "vat_id": "BE589984536",
+    "address": {
+      "line1": "1 Example St",
+      "city": "City",
+      "postal_code": "1000",
+      "country": "BE"
+    }
+  },
+  "lines": [
+    {
+      "name": "Service",
+      "quantity": 1,
+      "unit_price": "100.00",
+      "unit_code": "EA",
+      "vat_category": "S",
+      "vat_rate": "21"
+    }
+  ],
+  "charges": [
+    {
+      "amount": "10.00",
+      "reason": "Shipping and handling",
+      "vat_category": "S",
+      "vat_rate": "21"
+    },
+    {
+      "amount": "5.00",
+      "is_charge": false,
+      "reason": "Loyalty discount",
+      "vat_category": "S",
+      "vat_rate": "21"
+    }
+  ]
+}

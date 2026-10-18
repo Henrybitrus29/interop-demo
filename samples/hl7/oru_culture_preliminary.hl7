@@ -1,0 +1,8 @@
+MSH|^~\&|LABSYS|CENTRAL_LAB|EHR|GENERAL_HOSP|20260314083512||ORU^R01^ORU_R01|MSG-CUL-0003|P|2.5.1
+PID|1||MRN300555^^^GENERAL_HOSP^MR||DEMO^CASEY^^^^^L||19900704|U
+ORC|RE|PLC-77003|LAB-55014
+OBR|1|PLC-77003|LAB-55014|600-7^Bacteria identified in Blood by Culture^LN|||20260316060000|||||||||||||||20260316141500|||P
+OBX|1|CWE|600-7^Bacteria identified^LN||3092008^Staphylococcus aureus^SCT||||||P|||
+OBX|2|SN|564-5^Colony count^LN||<^10||||||P|||
+OBX|3|ST|18725-2^Microbiology comment^LN||Gram-positive cocci in clusters; sensitivities to follow.||||||P|||
+NTE|1||Critical value called to ward at 14:10.

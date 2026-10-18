@@ -1,0 +1,36 @@
+{
+  "invoice_number": "INV-0001",
+  "issue_date": "2026-03-14",
+  "currency": "EUR",
+  "order_reference": "PO-100",
+  "seller": {
+    "name": "Seller RC",
+    "vat_id": "DE451358209",
+    "address": {
+      "line1": "1 Example St",
+      "city": "City",
+      "postal_code": "1000",
+      "country": "DE"
+    }
+  },
+  "buyer": {
+    "name": "Buyer RC",
+    "vat_id": "FR202079095",
+    "address": {
+      "line1": "1 Example St",
+      "city": "City",
+      "postal_code": "1000",
+      "country": "FR"
+    }
+  },
+  "lines": [
+    {
+      "name": "Consulting",
+      "quantity": 1,
+      "unit_price": "1000.00",
+      "unit_code": "EA",
+      "vat_category": "AE",
+      "vat_rate": 0
+    }
+  ]
+}

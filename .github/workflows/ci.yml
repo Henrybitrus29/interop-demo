@@ -1,0 +1,17 @@
+name: CI
+on: [push, pull_request]
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: { python-version: "3.12" }
+      - run: pip install -r requirements.txt
+      - run: python -m unittest discover -s tests -t . -v
+      - name: Start the app and confirm both validation layers loaded
+        run: |
+          uvicorn app.main:app --port 8000 &
+          for i in $(seq 1 30); do curl -sf localhost:8000/healthz > /dev/null && break || sleep 1; done
+          sleep 8
+          curl -sf localhost:8000/healthz | python -c "import sys, json; d = json.load(sys.stdin); print(d); assert d['fhir_validation'] is True and d['en16931_validation'] is True, d"

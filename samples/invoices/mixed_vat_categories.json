@@ -1,0 +1,44 @@
+{
+  "invoice_number": "INV-0001",
+  "issue_date": "2026-03-14",
+  "currency": "EUR",
+  "order_reference": "PO-100",
+  "seller": {
+    "name": "Seller Co",
+    "vat_id": "BE038727515",
+    "address": {
+      "line1": "1 Example St",
+      "city": "City",
+      "postal_code": "1000",
+      "country": "BE"
+    }
+  },
+  "buyer": {
+    "name": "Buyer Co",
+    "vat_id": "BE589984536",
+    "address": {
+      "line1": "1 Example St",
+      "city": "City",
+      "postal_code": "1000",
+      "country": "BE"
+    }
+  },
+  "lines": [
+    {
+      "name": "Standard-rated item",
+      "quantity": 1,
+      "unit_price": "100.00",
+      "unit_code": "EA",
+      "vat_category": "S",
+      "vat_rate": "21"
+    },
+    {
+      "name": "Zero-rated export",
+      "quantity": 1,
+      "unit_price": "50.00",
+      "unit_code": "EA",
+      "vat_category": "Z",
+      "vat_rate": 0
+    }
+  ]
+}
